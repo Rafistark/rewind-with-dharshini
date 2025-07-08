@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Door 2 - Cupid's Question</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff6f9;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h2 { color: #e91e63; }
+    .cupid {
+      width: 150px;
+      margin: 20px auto;
+      animation: float 2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .textbox, .btn {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+    }
+    .mail-container {
+      display: none;
+      margin-top: 40px;
+      animation: fadeInUp 2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .letter-photo {
+      width: 60%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .message-box {
+      background: #fff;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>💘 Door 2 - Cupid’s Question</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Cupid_2014_logo.svg/1200px-Cupid_2014_logo.svg.png" alt="Cupid" class="cupid" />
+  <p>Where did you and Rafi first meet?</p>
+  <input id="answer" class="textbox" placeholder="Type your answer..."/>
+  <br/>
+  <button class="btn" onclick="checkAnswer()">Submit</button>
+
+  <div class="mail-container" id="mail">
+    <h3>📨 You got a mail</h3>
+    <p>Swipe up to open ⬆️</p>
+    <img src="https://drive.google.com/uc?export=view&id=1Y8cWLfZZ0ahZW9LcKkRV3TouNpsHZpx4" alt="Letter Photo" class="letter-photo"/>
+    <div class="message-box">
+      <p><em>The first ever thing I bought for you is this dairy milk chocolate. And I never forget the day I first met you. It was the best day of my life 💓.<br><br>
+      With infinite love,<br> Piggy pong 🖖🏻❤️‍🩹</em></p>
+    </div>
+    <br/>
+    <a href="door3.html"><button class="btn">Continue ➡️</button></a>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.toLowerCase().trim();
+      if (input === "dharmapuri") {
+        alert("Here is the way to you, my love 💖");
+        document.getElementById('mail').style.display = 'block';
+      } else {
+        alert("Oops! That's not quite right. Try again 🧐");
+      }
+    }
+  </script>
+</body>
+</html>
