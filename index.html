@@ -1,4 +1,48 @@
 
-<!-- Placeholder: This is the final compiled site with all features inside -->
-<!-- Includes: All 4 doors, map, riddles, album, contract, mail feature, animations -->
-<!-- HTML content would go here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rewind With Dharshini</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      text-align: center;
+      padding-top: 10vh;
+    }
+    h1 {
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease;
+    }
+    .loading {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      animation: blink 1s infinite;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Rewind With Dharshini 💖</h1>
+  <div class="loading">Loading your love story magic...</div>
+  <!-- All door, map, album, and contract logic will go here -->
+  <script>
+    // Simulating loading script
+    setTimeout(() => {
+      document.querySelector('.loading').innerText = '✨ Magic is ready!';
+    }, 3000);
+  </script>
+</body>
+</html>
