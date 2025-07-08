@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewind With Dharshini 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .door {
+      width: 120px;
+      height: 200px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 0 20px #fff;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .door:hover {
+      transform: scale(1.1);
+    }
+    .door::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .message {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+    .button {
+      background: #ff8a00;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+    }
+    .button:hover {
+      background: #e52e71;
+    }
+    .hidden {
+      display: none;
+    }
+    input[type=text] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    img.photo {
+      max-width: 90%;
+      margin: 1rem 0;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rewind With Dharshini 💖</h1>
+  </header>  <!-- Door 1 -->  <div class="section" id="door1">
+    <p class="message">The start of a beautiful bond on this day <strong>22 July 2024</strong> that made me do this, this is a gift for you maa 🤌🏻❤️‍🩹</p>
+    <div class="door" onclick="openDoor1()"></div>
+    <button class="button" onclick="openDoor1()">Press to Open</button>
+  </div>  <!-- Transition after Door 1 -->  <div class="section hidden" id="afterDoor1">
+    <p class="message">Come on, we got plenty of moments to visit my love 😘</p>
+    <button class="button" onclick="goToDoor2()">Continue</button>
+  </div>  <!-- Door 2: Cupid -->  <div class="section hidden" id="door2">
+    <p class="message">💘 Cupid appears 💘<br>Where did you and Rafi first meet?</p>
+    <input type="text" id="q1" placeholder="Type your answer...">
+    <button class="button" onclick="checkAnswer1()">Submit</button>
+  </div>  <!-- Mail Reveal after Door 2 -->  <div class="section hidden" id="mailReveal">
+    <p class="message">📩 You got a mail!<br>Swipe up to open 📤</p>
+    <img src="https://drive.google.com/uc?id=1Y8cWLfZZ0ahZW9LcKkRV3TouNpsHZpx4" alt="Letter Photo" class="photo">
+    <p class="message">
+      The first ever thing I bought for you is this dairy milk chocolate.<br>
+      And I never forget the day I first met you. It was the best day of my life 💓.<br><br>
+      With infinite love,<br>
+      Piggy pong 🖖🏻❤️‍🩹
+    </p>
+    <button class="button" onclick="goToDoor3()">Continue</button>
+  </div>  <!-- Door 3: Phone Riddle -->  <div class="section hidden" id="door3">
+    <p class="message">📱 New Message:<br>Do we have a photo together?</p>
+    <button class="button" onclick="chooseYes()">Yes</button>
+    <button class="button" onclick="chooseNo()">No</button>
+  </div>  <!-- Album Input -->  <div class="section hidden" id="albumAccess">
+    <p class="message">This is a confidential photo album 😘<br>Type your name to unlock it</p>
+    <input type="text" id="albumName" placeholder="Your name...">
+    <button class="button" onclick="openAlbum()">Open Album</button>
+  </div>  <!-- Album Pages -->  <div class="section hidden" id="albumPages">
+    <img src="https://drive.google.com/uc?id=1WZqXjX4LepXPOgRuqlaYtD88NavK7mSO" class="photo">
+    <p class="message">Our first ever photo together<br>April 9, 2025<br>When I came to pick you up from Trichy<br>And the bus travel was wonderful</p>
+    <button class="button" onclick="alert('More album pages coming in extended version')">Next Page</button>
+  </div>  <script>
+    function openDoor1() {
+      document.getElementById("door1").style.display = "none";
+      document.getElementById("afterDoor1").style.display = "block";
+    }
+
+    function goToDoor2() {
+      document.getElementById("afterDoor1").style.display = "none";
+      document.getElementById("door2").style.display = "block";
+    }
+
+    function checkAnswer1() {
+      let ans = document.getElementById("q1").value.trim().toLowerCase();
+      if (ans === "dharmapuri") {
+        document.getElementById("door2").style.display = "none";
+        document.getElementById("mailReveal").style.display = "block";
+      } else {
+        alert("Hmm, think again. Where did we meet first?");
+      }
+    }
+
+    function goToDoor3() {
+      document.getElementById("mailReveal").style.display = "none";
+      document.getElementById("door3").style.display = "block";
+    }
+
+    function chooseYes() {
+      alert("Checking your storage...");
+      document.getElementById("door3").style.display = "none";
+      document.getElementById("albumAccess").style.display = "block";
+    }
+
+    function chooseNo() {
+      if (confirm("Are you sure?")) {
+        document.getElementById("door3").style.display = "none";
+        document.getElementById("albumAccess").style.display = "block";
+      }
+    }
+
+    function openAlbum() {
+      let name = document.getElementById("albumName").value.trim().toLowerCase();
+      if (name === "dharshini") {
+        document.getElementById("albumAccess").style.display = "none";
+        document.getElementById("albumPages").style.display = "block";
+      } else {
+        alert("Oops! Signature not recognized.");
+      }
+    }
+  </script></body>
+  </html>
